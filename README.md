@@ -2,7 +2,10 @@
 
 This Vagrant repo provisions and configures a VM with the tools necessary to test a control repo using [Onceover](https://github.com/dylanratcliffe/onceover), a cool testing tool for the [Roles and Profiles](https://puppet.com/docs/puppet/7/the_roles_and_profiles_method.html) Puppet method.
 
-Onceover lets you compile a local catalog against local machine facts, resolve Hiera data and group classes and nodes in a comprehensive way.
+Onceover is cool because it's simple. You will test your roles locally and that's it. Because your roles will have profiles, then if a role fail a test, you can pinpoint which profile is causing that in a much easier way.
+
+Onceover lets you compile a local catalog against local machine facts, resolve Hiera data, group classes and nodes in a comprehensive way.
+
 With Onceover, you can also run tests against custom node facts that you can extract from your own precious and unique infrastructure.
 
 ### Prerequisites
