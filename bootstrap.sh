@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export CONTROL_REPO_URL="https://github.com/puppetlabs/control-repo.git"
-export CONTROL_REPO_FOLDER="control-repo"
+export CONTROL_REPO_URL=$1
+export CONTROL_REPO_FOLDER=$2
 echo
 
 echo "[TASK 1] Installing tools"
