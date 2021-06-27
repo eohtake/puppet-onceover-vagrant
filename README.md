@@ -71,7 +71,7 @@ vagrant reload --provision
 
 Destroy the machine:
 ```
-vagrant resume
+vagrant destroy
 ```
 >**Note**:  
 Git push or backup your code before doing that. :-)
