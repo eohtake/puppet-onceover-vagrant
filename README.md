@@ -54,6 +54,29 @@ This block in the Vagrant file defines some VM stuff that you might want to chan
 
 ```
 
+### Using private repos
+If you need your VM to authenticate to a repository via SSH, add this line to your Vagrant file:
+```ruby
+  config.vm.define "puppet-dev-machine" do |host|
+    ...
+    host.ssh.forward_agent = true
+    ...
+  end
+```
+
+### Using private servers
+If you have a private Git server, you need your VM to trust the Git host when using SSH, for that, add the following to the `bootstrap.sh` script:
+```sh
+echo "[TASK #] Configuring My Git Server and SSH"
+ssh-keyscan -H git-server.my-domain.com >> ~/.ssh/known_hosts
+ssh -T git@git-server.my-domain.com
+```
+>**Note:**
+In the [ssh-git](./ssh-git) folder you can find an alternative `bootstrap.sh` script that helps with authenticated repos over ssh.
+>
+
+
+
 ### The Vagrant VM operation
 From this repository folder (where the Vagrant file is) run the following to:
 
