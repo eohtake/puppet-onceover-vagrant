@@ -9,6 +9,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "install-ruby.sh", args: ["2.5.9", "bundler"], privileged: false
   # The second argument is the git folder. Change it if your repo URL changes.
   config.vm.provision :shell, path: "bootstrap.sh", args: ["https://github.com/puppetlabs/control-repo.git", "control-repo"], privileged: false
+  # Use this one if you want to ssh your way in a repo. :)
+  #config.vm.provision :shell, path: "bootstrap.sh", args: ["git@github.com:puppetlabs/control-repo.git", "control-repo"], privileged: false
 
   config.vm.define "puppet-dev-machine" do |host|
     host.vm.box      = "ubuntu/focal64"
